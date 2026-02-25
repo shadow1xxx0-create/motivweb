@@ -1,26 +1,190 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #000000;
+  --color-surface: #1a1a2e;
+  --color-accent: #00ff87;
+  --color-accent-glow: rgba(0, 255, 135, 0.3);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.6);
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  --color-cat-trials: #073B4C;
+  --color-cat-trust: #0f3460;
+  --color-cat-patience: #1B4332;
+  --color-cat-hope: #2D6A4F;
+  --color-cat-prayer: #1a1a2e;
+  --color-cat-character: #302b63;
+  --color-cat-provision: #203A43;
+
+  --font-lora: var(--font-lora-var);
+  --font-amiri: var(--font-amiri-var);
+  --font-inter: var(--font-inter-var);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Amiri";
+  src: url("https://fonts.gstatic.com/s/amiri/v27/J7aRnpd8CGxBHqUpvrIw74NL.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC;
+}
+
+/* ---- Base ---- */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #000000;
+  color: #ffffff;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---- Animated Hero Gradient ---- */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-gradient {
+  background: linear-gradient(-45deg, #000000, #0f3460, #1B4332, #073B4C, #1a1a2e);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* ---- Phone Float ---- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 4s ease-in-out 1s infinite;
+}
+
+.animate-float-delayed-2 {
+  animation: float 4s ease-in-out 2s infinite;
+}
+
+/* ---- Glassmorphism ---- */
+.glass {
+  background: rgba(26, 26, 46, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(26, 26, 46, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: #00ff87;
+  box-shadow: 0 8px 32px rgba(0, 255, 135, 0.15);
+}
+
+/* ---- Scroll Fade In ---- */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+/* ---- Islamic Pattern Overlay ---- */
+.islamic-pattern {
+  background-image:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,0.03) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ---- Quote Card Divider ---- */
+.quote-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0.4;
+}
+
+.quote-divider::before,
+.quote-divider::after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: currentColor;
+}
+
+.quote-divider::after {
+  /* mirror */
+}
+
+/* ---- Phone Mockup ---- */
+.phone-frame {
+  position: relative;
+  width: 280px;
+  border-radius: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  background: #0a0a0a;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 28px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+
+/* ---- Category Scroll ---- */
+.category-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.15) transparent;
+}
+
+.category-scroll::-webkit-scrollbar {
+  height: 4px;
 }
