@@ -8,7 +8,11 @@ export default function DownloadModal() {
   useEffect(() => {
     let triggered = false;
     const onScroll = () => {
-      if (!triggered && window.scrollY > 600) {
+      if (triggered) return;
+      const target = document.getElementById("preview");
+      if (!target) return;
+      const threshold = target.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.6;
+      if (window.scrollY >= threshold) {
         triggered = true;
         setVisible(true);
         window.removeEventListener("scroll", onScroll);

@@ -2,7 +2,7 @@ import PhoneMockup from "./PhoneMockup";
 
 export default function AppScreenshots() {
   return (
-    <section className="py-20 md:py-32 relative overflow-hidden">
+    <section id="preview" className="py-20 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-[family-name:var(--font-lora-var)] text-3xl md:text-5xl font-semibold text-white mb-4">
