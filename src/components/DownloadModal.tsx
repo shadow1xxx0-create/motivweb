@@ -6,21 +6,16 @@ export default function DownloadModal() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const target = document.getElementById("features");
-    if (!target) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(target);
-    return () => observer.disconnect();
+    let triggered = false;
+    const onScroll = () => {
+      if (!triggered && window.scrollY > 600) {
+        triggered = true;
+        setVisible(true);
+        window.removeEventListener("scroll", onScroll);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   if (!visible) return null;
@@ -38,26 +33,24 @@ export default function DownloadModal() {
         padding: "24px",
         background: "rgba(0,0,0,0.85)",
         backdropFilter: "blur(8px)",
-        animation: "fadeIn 0.4s ease",
+        animation: "modalFadeIn 0.4s ease",
       }}
     >
       <style>{`
-        @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
-        @keyframes slideUp { from { opacity: 0; transform: translateY(40px) } to { opacity: 1; transform: translateY(0) } }
+        @keyframes modalFadeIn { from { opacity: 0 } to { opacity: 1 } }
+        @keyframes modalSlideUp { from { opacity: 0; transform: translateY(40px) } to { opacity: 1; transform: translateY(0) } }
       `}</style>
 
-      {/* Modal card */}
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
           width: "100%",
           maxWidth: "460px",
           borderRadius: "24px",
-          overflow: "hidden",
           background: "linear-gradient(160deg, #1a1a2e 0%, #0f3460 60%, #1B4332 100%)",
           border: "1px solid rgba(255,255,255,0.1)",
           boxShadow: "0 32px 80px rgba(0,0,0,0.6)",
-          animation: "slideUp 0.4s ease",
+          animation: "modalSlideUp 0.4s ease",
           position: "relative",
         }}
       >
@@ -86,9 +79,7 @@ export default function DownloadModal() {
           </svg>
         </button>
 
-        {/* Content */}
         <div style={{ padding: "48px 40px 40px", textAlign: "center" }}>
-          {/* App icon */}
           <div
             style={{
               width: "72px",
@@ -107,30 +98,14 @@ export default function DownloadModal() {
             </svg>
           </div>
 
-          <h2
-            style={{
-              color: "#fff",
-              fontSize: "28px",
-              fontWeight: 700,
-              margin: "0 0 12px",
-              lineHeight: 1.2,
-            }}
-          >
+          <h2 style={{ color: "#fff", fontSize: "28px", fontWeight: 700, margin: "0 0 12px", lineHeight: 1.2 }}>
             Begin Your Journey with Ilham
           </h2>
 
-          <p
-            style={{
-              color: "rgba(255,255,255,0.55)",
-              fontSize: "15px",
-              lineHeight: 1.6,
-              margin: "0 0 32px",
-            }}
-          >
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "15px", lineHeight: 1.6, margin: "0 0 32px" }}>
             Daily Islamic wisdom, curated Quran verses, and spiritual reminders — all in one free app.
           </p>
 
-          {/* Play Store button */}
           <a
             href="https://play.google.com/store/apps/details?id=com.ilham.app"
             target="_blank"
@@ -148,7 +123,7 @@ export default function DownloadModal() {
               fontSize: "15px",
               boxShadow: "0 0 32px rgba(0,255,135,0.35)",
               justifyContent: "center",
-              marginBottom: "12px",
+              marginBottom: "16px",
             }}
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
@@ -159,14 +134,7 @@ export default function DownloadModal() {
 
           <button
             onClick={() => setVisible(false)}
-            style={{
-              background: "none",
-              border: "none",
-              color: "rgba(255,255,255,0.3)",
-              fontSize: "13px",
-              cursor: "pointer",
-              marginTop: "4px",
-            }}
+            style={{ background: "none", border: "none", color: "rgba(255,255,255,0.3)", fontSize: "13px", cursor: "pointer" }}
           >
             Maybe later
           </button>
