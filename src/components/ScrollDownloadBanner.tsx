@@ -26,7 +26,6 @@ export default function ScrollDownloadBanner() {
         position: "fixed",
         bottom: "24px",
         left: "50%",
-        transform: "translateX(-50%)",
         zIndex: 50,
         width: "calc(100% - 2rem)",
         maxWidth: "420px",
