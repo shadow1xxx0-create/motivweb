@@ -1,3 +1,5 @@
+"use client";
+
 const reviews = [
   {
     name: "Alex Lee",
@@ -27,6 +29,34 @@ const reviews = [
     pic: "/support.jpg",
   },
 ];
+
+import { useState } from "react";
+
+function Avatar({ pic, initials, color }: { pic?: string; initials: string; color: string }) {
+  const [failed, setFailed] = useState(false);
+  const avatarStyle = {
+    width: "44px",
+    height: "44px",
+    borderRadius: "50%",
+    flexShrink: 0 as const,
+    border: "1px solid rgba(255,255,255,0.1)",
+    position: "relative" as const,
+    overflow: "hidden" as const,
+  };
+  return (
+    <div style={{ ...avatarStyle, background: color, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "13px", fontWeight: 700, color: "#fff", letterSpacing: "0.05em" }}>
+      {initials}
+      {pic && !failed && (
+        <img
+          src={pic}
+          alt=""
+          onError={() => setFailed(true)}
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }}
+        />
+      )}
+    </div>
+  );
+}
 
 function Stars() {
   return (
@@ -58,36 +88,7 @@ export default function Reviews() {
             <div key={i} className="glass-card p-6 md:p-8 flex flex-col gap-4">
               {/* Header */}
               <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                {r.pic ? (
-                  <img
-                    src={r.pic}
-                    alt={r.name}
-                    width={44}
-                    height={44}
-                    style={{ width: "44px", height: "44px", borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "1px solid rgba(255,255,255,0.1)" }}
-                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-                  />
-                ) : (
-                  <div
-                    style={{
-                      width: "44px",
-                      height: "44px",
-                      borderRadius: "50%",
-                      background: r.color,
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      flexShrink: 0,
-                      fontSize: "13px",
-                      fontWeight: 700,
-                      color: "#fff",
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    {r.initials}
-                  </div>
-                )}
+                <Avatar pic={r.pic} initials={r.initials} color={r.color} />
                 <div>
                   <p style={{ color: "#fff", fontWeight: 600, fontSize: "14px", margin: 0 }}>{r.name}</p>
                   <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "12px", margin: 0 }}>{r.date} · {r.device}</p>
