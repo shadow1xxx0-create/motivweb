@@ -9,7 +9,7 @@ export default function DownloadModal() {
     let triggered = false;
     const onScroll = () => {
       if (triggered) return;
-      const target = document.getElementById("preview");
+      const target = document.getElementById("download");
       if (!target) return;
       const threshold = target.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.6;
       if (window.scrollY >= threshold) {
