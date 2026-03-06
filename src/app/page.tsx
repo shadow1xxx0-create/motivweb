@@ -6,6 +6,7 @@ import CategoryShowcase from "@/components/CategoryShowcase";
 import AppScreenshots from "@/components/AppScreenshots";
 import DownloadCTA from "@/components/DownloadCTA";
 import Footer from "@/components/Footer";
+import ScrollDownloadBanner from "@/components/ScrollDownloadBanner";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <DownloadCTA />
       </main>
       <Footer />
+      <ScrollDownloadBanner />
     </>
   );
 }
