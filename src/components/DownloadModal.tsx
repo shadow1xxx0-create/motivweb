@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 
 export default function DownloadModal() {
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
     const target = document.getElementById("features");
@@ -12,23 +11,23 @@ export default function DownloadModal() {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !dismissed) {
+        if (entry.isIntersecting) {
           setVisible(true);
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     observer.observe(target);
     return () => observer.disconnect();
-  }, [dismissed]);
+  }, []);
 
   if (!visible) return null;
 
   return (
     <div
-      onClick={() => setDismissed(true)}
+      onClick={() => setVisible(false)}
       style={{
         position: "fixed",
         inset: 0,
@@ -64,7 +63,7 @@ export default function DownloadModal() {
       >
         {/* Close */}
         <button
-          onClick={() => setDismissed(true)}
+          onClick={() => setVisible(false)}
           style={{
             position: "absolute",
             top: "16px",
@@ -137,7 +136,7 @@ export default function DownloadModal() {
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              display: "inline-flex",
+              display: "flex",
               alignItems: "center",
               gap: "12px",
               padding: "14px 28px",
@@ -148,7 +147,6 @@ export default function DownloadModal() {
               fontWeight: 700,
               fontSize: "15px",
               boxShadow: "0 0 32px rgba(0,255,135,0.35)",
-              width: "100%",
               justifyContent: "center",
               marginBottom: "12px",
             }}
@@ -160,7 +158,7 @@ export default function DownloadModal() {
           </a>
 
           <button
-            onClick={() => setDismissed(true)}
+            onClick={() => setVisible(false)}
             style={{
               background: "none",
               border: "none",
