@@ -74,9 +74,15 @@ export default function Footer() {
           <p className="text-xs text-white/30">
             &copy; {new Date().getFullYear()} Ilham. All rights reserved.
           </p>
-          <p className="text-xs text-white/30">
-            Made with ❤️ for the Ummah
-          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://privacy.getilham.com"
+              className="text-xs text-white/30 hover:text-white/60 transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <p className="text-xs text-white/30">Made with ❤️ for the Ummah</p>
+          </div>
         </div>
       </div>
     </footer>
