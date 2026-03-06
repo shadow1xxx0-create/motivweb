@@ -15,18 +15,18 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ilham — Islamic Wisdom & Quran Verses App",
+  title: "Ilham — Motivational Wisdom & Quran Verses App",
   description:
-    "Discover beautifully curated Islamic wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
+    "Discover beautifully curated Motivational wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
   keywords: [
-    "islamic quotes app",
+    "motivational quotes app",
     "quran verses app",
-    "islamic wisdom",
+    "motivational wisdom",
     "muslim motivation",
     "ilham app",
-    "daily islamic quotes",
+    "daily motivational quotes",
     "quran quotes",
-    "islamic inspiration",
+    "motivational inspiration",
   ],
   authors: [{ name: "Ilham" }],
   metadataBase: new URL("https://getilham.com"),
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Ilham — Daily Islamic Wisdom & Quran Verses",
+    title: "Ilham — Daily Motivational Wisdom & Quran Verses",
     description:
-      "Discover beautifully curated Islamic wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
+      "Discover beautifully curated Motivational wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
     url: "https://getilham.com",
     siteName: "Ilham",
     locale: "en_US",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ilham — Daily Islamic Wisdom & Quran Verses",
+    title: "Ilham — Daily Motivational Wisdom & Quran Verses",
     description:
-      "Discover beautifully curated Islamic wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
+      "Discover beautifully curated Motivational wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
   },
   robots: {
     index: true,
@@ -62,7 +62,7 @@ const jsonLd = {
       name: "Ilham",
       url: "https://getilham.com",
       description:
-        "Discover beautifully curated Islamic wisdom quotes paired with Quran verses.",
+        "Discover beautifully curated Motivational wisdom quotes paired with Quran verses.",
     },
     {
       "@type": "MobileApplication",
@@ -70,7 +70,7 @@ const jsonLd = {
       operatingSystem: "Android",
       applicationCategory: "LifestyleApplication",
       description:
-        "Daily Islamic Wisdom & Quran Verses. Beautifully curated quotes paired with relevant Quran verses.",
+        "Daily Motivational Wisdom & Quran Verses. Beautifully curated quotes paired with relevant Quran verses.",
       offers: {
         "@type": "Offer",
         price: "0",

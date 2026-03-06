@@ -43,7 +43,7 @@ export default function QuoteShowcase() {
             A Glimpse of Wisdom
           </h2>
           <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto">
-            Each card in Ilham pairs timeless Islamic wisdom with its Quran
+            Each card in Ilham pairs timeless motivational wisdom with its Quran
             source — beautifully designed for daily reflection.
           </p>
         </div>

@@ -74,7 +74,7 @@ export default function ScrollDownloadBanner() {
             Get the Ilham App
           </p>
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "12px", marginTop: "2px", margin: 0 }}>
-            Daily Islamic wisdom, free on Android
+            Daily motivational wisdom, free on Android
           </p>
         </div>
 

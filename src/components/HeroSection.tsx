@@ -19,10 +19,10 @@ export default function HeroSection() {
               إلهام
             </p>
             <h2 className="font-[family-name:var(--font-lora-var)] text-xl md:text-2xl text-white/80 font-light mb-6">
-              Daily Wisdom &amp; Quran Verses
+              Daily Motivational Wisdom &amp; Quran Verses
             </h2>
             <p className="text-base md:text-lg text-white/60 max-w-lg mx-auto lg:mx-0 mb-8 leading-relaxed">
-              Beautifully curated Islamic wisdom quotes, each
+              Beautifully curated motivational wisdom quotes, each
               paired with a relevant Quran verse. Strengthen your faith.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

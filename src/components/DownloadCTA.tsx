@@ -12,7 +12,7 @@ export default function DownloadCTA() {
           Begin Your Journey
         </h2>
         <p className="text-white/60 text-base md:text-lg max-w-xl mx-auto mb-10">
-          Start each day with a moment of reflection. Let timeless Islamic
+          Start each day with a moment of reflection. Let timeless motivational
           wisdom guide your path — one quote at a time.
         </p>
 

@@ -6,7 +6,7 @@ const features = [
       </svg>
     ),
     title: "Curated Quotes",
-    description: "Handpicked Islamic wisdom presented in both English and Arabic for meaningful daily reflection.",
+    description: "Handpicked motivational wisdom presented in both English and Arabic for meaningful daily reflection.",
   },
   {
     icon: (
@@ -65,7 +65,7 @@ export default function FeaturesGrid() {
           </h2>
           <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto">
             A thoughtfully crafted experience designed to bring you closer to
-            Islamic wisdom every single day.
+            motivational wisdom every single day.
           </p>
         </div>
 

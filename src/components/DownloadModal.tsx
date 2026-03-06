@@ -103,7 +103,7 @@ export default function DownloadModal() {
           </h2>
 
           <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "15px", lineHeight: 1.6, margin: "0 0 32px" }}>
-            Daily Islamic wisdom, curated Quran verses, and spiritual reminders — all in one free app.
+            Daily motivational wisdom, curated Quran verses, and spiritual reminders — all in one free app.
           </p>
 
           <a

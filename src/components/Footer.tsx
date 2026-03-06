@@ -9,7 +9,7 @@ export default function Footer() {
               Ilham
             </h3>
             <p className="text-white/40 text-sm leading-relaxed">
-              Daily Islamic Wisdom &amp; Quran Verses.
+              Daily Motivational Wisdom &amp; Quran Verses.
               <br />
               Strengthen your faith, one quote at a time.
             </p>
