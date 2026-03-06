@@ -5,8 +5,10 @@ import FeaturesGrid from "@/components/FeaturesGrid";
 import CategoryShowcase from "@/components/CategoryShowcase";
 import AppScreenshots from "@/components/AppScreenshots";
 import DownloadCTA from "@/components/DownloadCTA";
+import DownloadBanner from "@/components/DownloadBanner";
 import Footer from "@/components/Footer";
 import ScrollDownloadBanner from "@/components/ScrollDownloadBanner";
+import DownloadModal from "@/components/DownloadModal";
 
 export default function Home() {
   return (
@@ -15,13 +17,16 @@ export default function Home() {
       <main>
         <HeroSection />
         <QuoteShowcase />
+        <DownloadBanner />
         <FeaturesGrid />
         <CategoryShowcase />
+        <DownloadBanner />
         <AppScreenshots />
         <DownloadCTA />
       </main>
       <Footer />
       <ScrollDownloadBanner />
+      <DownloadModal />
     </>
   );
 }
