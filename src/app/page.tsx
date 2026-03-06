@@ -9,6 +9,7 @@ import DownloadBanner from "@/components/DownloadBanner";
 import Footer from "@/components/Footer";
 import ScrollDownloadBanner from "@/components/ScrollDownloadBanner";
 import DownloadModal from "@/components/DownloadModal";
+import Reviews from "@/components/Reviews";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <FeaturesGrid />
         <CategoryShowcase />
         <AppScreenshots />
+        <Reviews />
         <DownloadBanner />
         <DownloadCTA />
       </main>
