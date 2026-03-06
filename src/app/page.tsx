@@ -17,11 +17,10 @@ export default function Home() {
       <main>
         <HeroSection />
         <QuoteShowcase />
-        <DownloadBanner />
         <FeaturesGrid />
         <CategoryShowcase />
-        <DownloadBanner />
         <AppScreenshots />
+        <DownloadBanner />
         <DownloadCTA />
       </main>
       <Footer />
