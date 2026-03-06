@@ -6,6 +6,7 @@ const reviews = [
     text: "Beautiful and professional app.",
     initials: "AL",
     color: "#0f3460",
+    pic: "/alex.jpg",
   },
   {
     name: "Gabriel Fernandes",
@@ -14,6 +15,7 @@ const reviews = [
     text: "I've been following this app since the trial!! It's really good. The phrases have helped me in my daily life, with the hustle and bustle of our lives and the care we should take with our mental health. Very good.",
     initials: "GF",
     color: "#1B4332",
+    pic: "/gabriel.jpg",
   },
   {
     name: "Support Team",
@@ -22,6 +24,7 @@ const reviews = [
     text: "I have always been interested in Islamic quotes, thanks for this app.",
     initials: "ST",
     color: "#302b63",
+    pic: "/support.jpg",
   },
 ];
 
@@ -55,25 +58,36 @@ export default function Reviews() {
             <div key={i} className="glass-card p-6 md:p-8 flex flex-col gap-4">
               {/* Header */}
               <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div
-                  style={{
-                    width: "44px",
-                    height: "44px",
-                    borderRadius: "50%",
-                    background: r.color,
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    flexShrink: 0,
-                    fontSize: "13px",
-                    fontWeight: 700,
-                    color: "#fff",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {r.initials}
-                </div>
+                {r.pic ? (
+                  <img
+                    src={r.pic}
+                    alt={r.name}
+                    width={44}
+                    height={44}
+                    style={{ width: "44px", height: "44px", borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "1px solid rgba(255,255,255,0.1)" }}
+                    onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: "44px",
+                      height: "44px",
+                      borderRadius: "50%",
+                      background: r.color,
+                      border: "1px solid rgba(255,255,255,0.1)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      flexShrink: 0,
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      color: "#fff",
+                      letterSpacing: "0.05em",
+                    }}
+                  >
+                    {r.initials}
+                  </div>
+                )}
                 <div>
                   <p style={{ color: "#fff", fontWeight: 600, fontSize: "14px", margin: 0 }}>{r.name}</p>
                   <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "12px", margin: 0 }}>{r.date} · {r.device}</p>
@@ -97,20 +111,6 @@ export default function Reviews() {
           ))}
         </div>
 
-        {/* Overall rating */}
-        <div style={{ textAlign: "center", marginTop: "48px" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: "12px", padding: "12px 24px", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "999px" }}>
-            <div style={{ display: "flex", gap: "2px" }}>
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#00FF87">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                </svg>
-              ))}
-            </div>
-            <span style={{ color: "#fff", fontWeight: 700, fontSize: "15px" }}>5.0</span>
-            <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "13px" }}>on Google Play</span>
-          </div>
-        </div>
       </div>
     </section>
   );
