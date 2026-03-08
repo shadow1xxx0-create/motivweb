@@ -3,12 +3,7 @@ import PhoneMockup from "./PhoneMockup";
 export default function HeroSection() {
   return (
     <section className="hero-gradient relative min-h-screen flex items-center overflow-hidden">
-      {/* Product Hunt Badge */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-10">
-        <a href="https://www.producthunt.com/products/ilham?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-ilham" target="_blank" rel="noopener noreferrer">
-          <img alt="Ilham - Motivational Quotes and reminders of faith. | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1091529&theme=light&t=1772870760485" />
-        </a>
-      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24 md:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left: Text */}
