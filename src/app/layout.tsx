@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Lora, Inter } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import { APP_STORE_URL } from "@/lib/constants";
 
-const lora = Lora({
-  variable: "--font-lora-var",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant-var",
   subsets: ["latin"],
+  weight: ["500", "600", "700"],
   display: "swap",
 });
 
@@ -15,38 +17,47 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ilham — Motivational Wisdom & Quran Verses App",
+  title: "I pray — Lock Your Apps Until You Pray | Salah, Athan & Qibla",
   description:
-    "Discover beautifully curated Motivational wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
+    "The Muslim prayer app that locks the apps stealing your salah — until you actually pray. Accurate prayer times, authentic adhan, qibla compass and streaks. Free on iPhone.",
   keywords: [
-    "motivational quotes app",
-    "quran verses app",
-    "motivational wisdom",
-    "muslim motivation",
-    "ilham app",
-    "daily motivational quotes",
-    "quran quotes",
-    "motivational inspiration",
+    "prayer app",
+    "app blocker for muslims",
+    "salah app",
+    "athan app",
+    "adhan app",
+    "qibla compass",
+    "prayer times app",
+    "never miss a prayer",
+    "muslim focus app",
+    "lock apps until you pray",
+    "screen time prayer app",
   ],
-  authors: [{ name: "Ilham" }],
+  authors: [{ name: "I pray" }],
   metadataBase: new URL("https://getilham.com"),
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: "/app-icon.png",
+    apple: "/app-icon.png",
+  },
   openGraph: {
-    title: "Ilham — Daily Motivational Wisdom & Quran Verses",
+    title: "I pray — Lock Your Apps Until You Pray",
     description:
-      "Discover beautifully curated Motivational wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
+      "Your phone keeps stealing your salah. I pray gives it back — it locks distracting apps the moment the adhan calls, until you pray.",
     url: "https://getilham.com",
-    siteName: "Ilham",
+    siteName: "I pray",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/app-icon.png", width: 1024, height: 1024, alt: "I pray app icon" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ilham — Daily Motivational Wisdom & Quran Verses",
+    title: "I pray — Lock Your Apps Until You Pray",
     description:
-      "Discover beautifully curated Motivational wisdom quotes paired with Quran verses. Free app for daily spiritual inspiration.",
+      "The Muslim prayer app that locks distracting apps until you pray. Free on iPhone.",
+    images: ["/app-icon.png"],
   },
   robots: {
     index: true,
@@ -59,25 +70,19 @@ const jsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      name: "Ilham",
+      name: "I pray",
       url: "https://getilham.com",
       description:
-        "Discover beautifully curated Motivational wisdom quotes paired with Quran verses.",
+        "The Muslim prayer app that locks distracting apps until you pray.",
     },
     {
       "@type": "MobileApplication",
-      name: "Ilham",
-      operatingSystem: "Android",
+      name: "I pray: Salah Athan Qibla Lock",
+      operatingSystem: "iOS",
       applicationCategory: "LifestyleApplication",
       description:
-        "Daily Motivational Wisdom & Quran Verses. Beautifully curated quotes paired with relevant Quran verses.",
-      offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-      },
-      installUrl:
-        "https://play.google.com/store/apps/details?id=com.ilham.app",
+        "I pray locks the apps pulling you away from Allah the moment the adhan is called — until you pray. Accurate prayer times, authentic adhan, qibla compass, hijri calendar and streak tracking.",
+      installUrl: APP_STORE_URL,
     },
   ],
 };
@@ -95,7 +100,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${lora.variable} ${inter.variable} antialiased`}>
+      <body className={`${cormorant.variable} ${inter.variable} antialiased`}>
         {children}
       </body>
     </html>

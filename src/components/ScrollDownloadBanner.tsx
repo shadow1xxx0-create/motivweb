@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import { APP_STORE_URL } from "@/lib/constants";
 
 export default function ScrollDownloadBanner() {
   const [visible, setVisible] = useState(false);
@@ -8,9 +10,9 @@ export default function ScrollDownloadBanner() {
 
   useEffect(() => {
     const onScroll = () => {
-      if (!dismissed && window.scrollY > 300) {
+      if (!dismissed && window.scrollY > 600) {
         setVisible(true);
-      } else if (window.scrollY <= 300) {
+      } else if (window.scrollY <= 600) {
         setVisible(false);
       }
     };
@@ -28,7 +30,7 @@ export default function ScrollDownloadBanner() {
         left: "50%",
         zIndex: 50,
         width: "calc(100% - 2rem)",
-        maxWidth: "420px",
+        maxWidth: "440px",
         transition: "opacity 0.5s ease, transform 0.5s ease",
         opacity: visible ? 1 : 0,
         transform: visible
@@ -41,53 +43,41 @@ export default function ScrollDownloadBanner() {
         style={{
           display: "flex",
           alignItems: "center",
-          gap: "16px",
-          padding: "16px 20px",
-          borderRadius: "16px",
-          background: "linear-gradient(135deg, rgba(26,26,46,0.97) 0%, rgba(15,52,96,0.97) 100%)",
+          gap: "14px",
+          padding: "14px 16px",
+          borderRadius: "18px",
+          background: "linear-gradient(135deg, rgba(11,54,60,0.98) 0%, rgba(6,33,38,0.98) 100%)",
           backdropFilter: "blur(16px)",
-          border: "1px solid rgba(255,255,255,0.1)",
-          boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
+          border: "1px solid rgba(76,196,203,0.25)",
+          boxShadow: "0 12px 44px rgba(0,0,0,0.6)",
         }}
       >
-        {/* Icon */}
-        <div
-          style={{
-            flexShrink: 0,
-            width: "40px",
-            height: "40px",
-            borderRadius: "10px",
-            background: "rgba(0,255,135,0.15)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#00FF87">
-            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 14.5v-5H8l4-7v5h3l-4 7z" />
-          </svg>
-        </div>
+        <Image
+          src="/app-icon.png"
+          alt="I pray app icon"
+          width={44}
+          height={44}
+          style={{ borderRadius: "11px", flexShrink: 0 }}
+        />
 
-        {/* Text */}
         <div style={{ flex: 1, minWidth: 0 }}>
-          <p style={{ color: "#fff", fontSize: "14px", fontWeight: 600, lineHeight: 1.2, margin: 0 }}>
-            Get the Ilham App
+          <p style={{ color: "#f8f4e8", fontSize: "14px", fontWeight: 600, lineHeight: 1.25, margin: 0 }}>
+            Don&apos;t miss the next adhan
           </p>
-          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "12px", marginTop: "2px", margin: 0 }}>
-            Daily motivational wisdom, free on Android
+          <p style={{ color: "#d6cba8", fontSize: "12px", marginTop: "2px", margin: 0 }}>
+            Lock your apps until you pray — free
           </p>
         </div>
 
-        {/* Download */}
         <a
-          href="https://play.google.com/store/apps/details?id=com.ilham.app"
+          href={APP_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
           style={{
             flexShrink: 0,
-            padding: "8px 16px",
-            background: "#00FF87",
-            color: "#000",
+            padding: "9px 16px",
+            background: "#f8f4e8",
+            color: "#03191c",
             fontSize: "12px",
             fontWeight: 700,
             borderRadius: "999px",
@@ -95,20 +85,18 @@ export default function ScrollDownloadBanner() {
             whiteSpace: "nowrap",
           }}
         >
-          Download
+          Get the app
         </a>
 
-        {/* Dismiss */}
         <button
           onClick={() => setDismissed(true)}
           style={{
             flexShrink: 0,
             background: "none",
             border: "none",
-            color: "rgba(255,255,255,0.3)",
+            color: "rgba(214,203,168,0.5)",
             cursor: "pointer",
             padding: "4px",
-            marginLeft: "4px",
           }}
           aria-label="Dismiss"
         >

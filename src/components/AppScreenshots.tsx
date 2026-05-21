@@ -1,90 +1,47 @@
-import PhoneMockup from "./PhoneMockup";
+import Image from "next/image";
+
+const shots = [
+  { src: "/screens/home.jpg", alt: "I pray home screen showing the next prayer countdown" },
+  { src: "/screens/locked.jpg", alt: "Apps locked until you pray" },
+  { src: "/screens/prayers.jpg", alt: "Daily prayer list with a hadith" },
+  { src: "/screens/qibla.jpg", alt: "Built-in qibla compass" },
+  { src: "/screens/calendar.jpg", alt: "Prayer history, streaks and hijri calendar" },
+  { src: "/screens/settings.jpg", alt: "App lock and prayer settings" },
+];
 
 export default function AppScreenshots() {
   return (
     <section id="preview" className="py-20 md:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-lora-var)] text-3xl md:text-5xl font-semibold text-white mb-4">
-            Beautiful by Design
+        <div className="text-center mb-12 md:mb-16 max-w-2xl mx-auto">
+          <p className="text-xs tracking-[0.3em] text-gold uppercase mb-4">
+            A look inside
+          </p>
+          <h2 className="font-[family-name:var(--font-cormorant-var)] text-3xl md:text-5xl font-semibold text-cream-bright mb-4">
+            Built to calm you, not capture you
           </h2>
-          <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto">
-            Every detail is crafted to create a serene, focused experience for
-            your daily reflection.
+          <p className="text-cream-dim text-base md:text-lg leading-relaxed">
+            Every screen is quiet, warm and deliberate — a space that draws you
+            toward prayer instead of pulling you into a feed.
           </p>
         </div>
+      </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-          {/* Screen 1 */}
-          <div className="animate-float">
-            <PhoneMockup>
-              <div className="w-full h-full relative flex flex-col">
-                <div className="absolute inset-0" style={{ background: "url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=800&fit=crop&q=80') center/cover no-repeat" }} />
-                <div className="absolute inset-0 bg-black/50" />
-                <div className="flex-1 flex flex-col justify-center px-5 relative z-10">
-                  <p className="text-[10px] text-accent uppercase tracking-widest mb-4 text-center">
-                    Trust
-                  </p>
-                  <blockquote className="font-[family-name:var(--font-lora-var)] text-base italic text-white text-center leading-relaxed mb-3 px-1">
-                    &ldquo;Whoever puts their trust in Allah, He will be enough for them.&rdquo;
-                  </blockquote>
-                  <p
-                    lang="ar"
-                    dir="rtl"
-                    className="text-base text-white/60 text-center mb-5 leading-relaxed"
-                    style={{ fontFamily: "'Amiri', serif" }}
-                  >
-                    وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ
-                  </p>
-                  <div className="quote-divider text-white/20 mb-3">
-                    <span className="w-1 h-1 rounded-full bg-current inline-block" />
-                  </div>
-                  <p className="font-[family-name:var(--font-lora-var)] text-xs italic text-white/40 text-center px-2">
-                    &ldquo;And whoever relies upon Allah — then He is sufficient for him.&rdquo;
-                  </p>
-                  <p className="text-[9px] text-accent text-center mt-2 tracking-wide">
-                    SURAH AT-TALAQ 65:3
-                  </p>
-                </div>
-              </div>
-            </PhoneMockup>
+      <div className="flex gap-5 md:gap-7 overflow-x-auto px-4 sm:px-6 lg:px-8 pb-6 category-scroll snap-x snap-mandatory">
+        {shots.map((s, i) => (
+          <div
+            key={i}
+            className="flex-shrink-0 snap-center w-[230px] md:w-[270px] rounded-[24px] overflow-hidden border border-[rgba(236,228,207,0.08)]"
+          >
+            <Image
+              src={s.src}
+              alt={s.alt}
+              width={1284}
+              height={2778}
+              className="h-auto w-full"
+            />
           </div>
-
-          {/* Screen 2 */}
-          <div className="animate-float-delayed md:-translate-y-6">
-            <PhoneMockup>
-              <div className="w-full h-full relative flex flex-col">
-                <div className="absolute inset-0" style={{ background: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=800&fit=crop&q=80') center/cover no-repeat" }} />
-                <div className="absolute inset-0 bg-black/50" />
-                <div className="flex-1 flex flex-col justify-center px-5 relative z-10">
-                  <p className="text-[10px] text-accent uppercase tracking-widest mb-4 text-center">
-                    Hope
-                  </p>
-                  <blockquote className="font-[family-name:var(--font-lora-var)] text-base italic text-white text-center leading-relaxed mb-3 px-1">
-                    &ldquo;Verily, with hardship comes ease.&rdquo;
-                  </blockquote>
-                  <p
-                    lang="ar"
-                    dir="rtl"
-                    className="text-base text-white/60 text-center mb-5 leading-relaxed"
-                    style={{ fontFamily: "'Amiri', serif" }}
-                  >
-                    فَإِنَّ مَعَ الْعُسْرِ يُسْرًا
-                  </p>
-                  <div className="quote-divider text-white/20 mb-3">
-                    <span className="w-1 h-1 rounded-full bg-current inline-block" />
-                  </div>
-                  <p className="font-[family-name:var(--font-lora-var)] text-xs italic text-white/40 text-center px-2">
-                    &ldquo;For indeed, with hardship will be ease.&rdquo;
-                  </p>
-                  <p className="text-[9px] text-accent text-center mt-2 tracking-wide">
-                    SURAH ASH-SHARH 94:5
-                  </p>
-                </div>
-              </div>
-            </PhoneMockup>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );

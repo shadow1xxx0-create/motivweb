@@ -1,85 +1,116 @@
 const features = [
   {
+    featured: true,
+    title: "The Salah Lock",
+    description:
+      "The heart of I pray. Distracting apps lock the moment the adhan calls and stay locked until you pray. Built on Apple's Screen Time API.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
     ),
-    title: "Curated Quotes",
-    description: "Handpicked motivational wisdom presented in both English and Arabic for meaningful daily reflection.",
   },
   {
+    title: "Accurate prayer times",
+    description:
+      "Fajr, Dhuhr, Asr, Maghrib and Isha — precise to your exact location, with pre-prayer warnings so you're never caught off guard.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-      </svg>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
     ),
-    title: "Paired Quran Verses",
-    description: "Every quote is linked to a relevant ayah from the Quran, deepening your connection to the source.",
   },
   {
+    title: "Authentic adhan",
+    description:
+      "Real adhan recitations from Makkah and Madinah call you to prayer — never a generic beep you learn to ignore.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z" />
-      </svg>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 19V6l11-2v13M9 19a3 3 0 11-6 0 3 3 0 016 0zm11-2a3 3 0 11-6 0 3 3 0 016 0z" />
     ),
-    title: "Themed Categories",
-    description: "Browse by theme — patience, trust, hope, prayer, trials, character, and provision.",
   },
   {
+    title: "Qibla compass",
+    description:
+      "Find the direction of the Kaaba in seconds, with smooth haptic feedback that guides you as you turn.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-      </svg>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm3.5-12.5l-2 5-5 2 2-5 5-2z" />
     ),
-    title: "Daily Reminders",
-    description: "Gentle notifications at your chosen time to start each day with spiritual inspiration.",
   },
   {
+    title: "Hijri calendar & daily hadith",
+    description:
+      "Today's Islamic date at a glance, and a hadith paired with every prayer to keep your heart present.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-      </svg>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3M3 11h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
     ),
-    title: "Share as Art",
-    description: "Create beautiful quote images to share with friends and family on social media.",
   },
   {
+    title: "Streaks you'll protect",
+    description:
+      "Every prayer on time builds a streak and an on-time score. Consistency turns into something you genuinely don't want to break.",
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 3l-1.5 6.5L17 9l-6 12 1.5-8L7 13l6-10z" />
     ),
-    title: "Track Your Journey",
-    description: "Build a spiritual streak with daily engagement tracking and milestone celebrations.",
   },
 ];
 
 export default function FeaturesGrid() {
   return (
     <section id="features" className="py-20 md:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-[family-name:var(--font-lora-var)] text-3xl md:text-5xl font-semibold text-white mb-4">
-            Why Ilham?
+      <div className="absolute inset-0 islamic-pattern opacity-40" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14 md:mb-16 max-w-2xl mx-auto">
+          <p className="text-xs tracking-[0.3em] text-gold uppercase mb-4">
+            Everything for your five daily prayers
+          </p>
+          <h2 className="font-[family-name:var(--font-cormorant-var)] text-3xl md:text-5xl font-semibold text-cream-bright mb-4">
+            One app instead of five
           </h2>
-          <p className="text-white/60 text-base md:text-lg max-w-2xl mx-auto">
-            A thoughtfully crafted experience designed to bring you closer to
-            motivational wisdom every single day.
+          <p className="text-cream-dim text-base md:text-lg leading-relaxed">
+            Prayer times, adhan, qibla, calendar — and the lock that finally
+            makes you use them. All in one calm, beautiful place.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f, i) => (
-            <div key={i} className="glass-card p-6 md:p-8 flex flex-col gap-4">
-              <div className="text-accent">{f.icon}</div>
-              <h3 className="text-lg font-semibold text-white">{f.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed">
+            <div
+              key={i}
+              className={`glass-card p-7 md:p-8 flex flex-col gap-4 ${
+                f.featured
+                  ? "border-[rgba(76,196,203,0.4)] bg-[rgba(8,43,48,0.6)]"
+                  : ""
+              }`}
+            >
+              <div className="flex items-center justify-between">
+                <span
+                  className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+                    f.featured
+                      ? "bg-accent/20 text-accent"
+                      : "bg-[rgba(76,196,203,0.1)] text-accent"
+                  }`}
+                >
+                  <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth={1.6} viewBox="0 0 24 24">
+                    {f.icon}
+                  </svg>
+                </span>
+                {f.featured && (
+                  <span className="rounded-full bg-accent/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-accent">
+                    Core feature
+                  </span>
+                )}
+              </div>
+              <h3 className="font-[family-name:var(--font-cormorant-var)] text-2xl font-semibold text-cream">
+                {f.title}
+              </h3>
+              <p className="text-cream-dim text-[15px] leading-relaxed">
                 {f.description}
               </p>
             </div>
           ))}
         </div>
+
+        <p className="mt-8 text-center text-sm text-cream-dim/80">
+          Multiple calculation methods (ISNA, MWL, Umm al-Qura, Karachi and
+          more) · Shafi &amp; Hanafi Asr · thoughtful handling for women&apos;s
+          days.
+        </p>
       </div>
     </section>
   );

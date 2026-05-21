@@ -1,87 +1,88 @@
+import Image from "next/image";
+import { APP_STORE_URL, PRIVACY_URL } from "@/lib/constants";
+
+const links = [
+  { href: "#problem", label: "The problem" },
+  { href: "#how", label: "How it works" },
+  { href: "#features", label: "Features" },
+  { href: "#faq", label: "FAQ" },
+];
+
 export default function Footer() {
   return (
-    <footer className="py-12 md:py-16 border-t border-white/5">
+    <footer className="py-12 md:py-16 border-t border-[rgba(236,228,207,0.07)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-10 md:gap-8">
           {/* Brand */}
           <div>
-            <h3 className="font-[family-name:var(--font-lora-var)] text-2xl font-bold text-white mb-2">
-              Ilham
-            </h3>
-            <p className="text-white/40 text-sm leading-relaxed">
-              Daily Motivational Wisdom &amp; Quran Verses.
-              <br />
-              Strengthen your faith, one quote at a time.
+            <div className="flex items-center gap-2.5 mb-3">
+              <Image
+                src="/app-icon.png"
+                alt="I pray app icon"
+                width={36}
+                height={36}
+                className="rounded-[10px]"
+              />
+              <span className="font-[family-name:var(--font-cormorant-var)] text-2xl font-semibold text-cream">
+                I pray
+              </span>
+            </div>
+            <p className="text-cream-dim text-sm leading-relaxed max-w-xs">
+              The Muslim prayer app that locks your distractions until you pray.
+              Salah, athan, qibla — and the focus to actually use them.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">
-              Quick Links
+            <h4 className="text-sm font-semibold text-cream-dim uppercase tracking-wider mb-4">
+              Explore
             </h4>
             <nav className="flex flex-col gap-2.5">
-              <a
-                href="#features"
-                className="text-sm text-white/40 hover:text-accent transition-colors"
-              >
-                Features
-              </a>
-              <a
-                href="#preview"
-                className="text-sm text-white/40 hover:text-accent transition-colors"
-              >
-                Preview
-              </a>
-              <a
-                href="#download"
-                className="text-sm text-white/40 hover:text-accent transition-colors"
-              >
-                Download
-              </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.ilham.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-white/40 hover:text-accent transition-colors"
-              >
-                Google Play
-              </a>
+              {links.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  className="text-sm text-cream-dim hover:text-accent transition-colors"
+                >
+                  {l.label}
+                </a>
+              ))}
             </nav>
           </div>
 
-          {/* Download */}
+          {/* Get the app */}
           <div>
-            <h4 className="text-sm font-semibold text-white/60 uppercase tracking-wider mb-4">
-              Get the App
+            <h4 className="text-sm font-semibold text-cream-dim uppercase tracking-wider mb-4">
+              Get I pray
             </h4>
             <a
-              href="https://play.google.com/store/apps/details?id=com.ilham.app"
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-accent hover:text-cream transition-colors"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333L13.5 12.707zM5.864 2.658L16.8 9.991l-2.302 2.302L6.862 2.658zM18.008 11.26l3.108 1.803a1 1 0 010 1.874l-3.108 1.803-2.544-2.544 2.544-2.936z" />
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
               </svg>
-              Download on Google Play
+              Download on the App Store
             </a>
           </div>
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/30">
-            &copy; {new Date().getFullYear()} Ilham. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-[rgba(236,228,207,0.07)] flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-cream-dim/70">
+            &copy; {new Date().getFullYear()} I pray. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a
-              href="https://privacy.getilham.com"
-              className="text-xs text-white/30 hover:text-white/60 transition-colors"
+              href={PRIVACY_URL}
+              className="text-xs text-cream-dim/70 hover:text-cream transition-colors"
             >
               Privacy Policy
             </a>
-            <p className="text-xs text-white/30">Made with ❤️ for the Ummah</p>
+            <p className="text-xs text-cream-dim/70">Made with ❤️ for the Ummah</p>
           </div>
         </div>
       </div>
